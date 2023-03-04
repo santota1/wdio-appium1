@@ -54,11 +54,10 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-    
         'appium:platformName': "Android",
         'appium:deviceName': "pixel3",
         'appium:automationName': "UIAutomator2",
-        'appium:app': path.join(process.cwd(), "./app/android/ApiDemos-debug.apk")
+        'appium:app': path.join(process.cwd(), "app/android/ApiDemos-debug.apk")
     }],
     //
     // ===================

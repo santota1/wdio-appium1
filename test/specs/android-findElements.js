@@ -20,4 +20,16 @@ describe('Android Elements Tests', () => {
         await expect(command2Text).toHaveText("You selected: 1 , Command two");
 
     })
+    it.only('Find Multiple Elements', async() => {
+        const textList = await $$('android.widget.TextView');
+
+        const expectedList = ['API Demos', "Access'ibility", 'Accessibility', 'Animation', 'App', 'Content', 'Graphics', 'Media', 'NFC', 'OS', 'Preference', 'Text', 'Views'];
+        const actualList = [];
+
+        for(const element of textList){
+            actualList.push(await element.getText());
+        }
+
+        await expect(actualList).toEqual(expectedList)
+    })
 });
